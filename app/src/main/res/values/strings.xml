@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">OneBanc</string>
+    <string name="home">Home</string>
+    <string name="language">Language</string>
+    <string name="cart">Cart</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hi_shashi">Hi Shashi</string>
+    <string name="order_eat">Order &amp; Eat</string>
+    <string name="find_your_food">Find your food</string>
+    <string name="category">Category</string>
+    <string name="top_3_foods">Top 3 Picks</string>
+    <string name="title">Title</string>
+</resources>
