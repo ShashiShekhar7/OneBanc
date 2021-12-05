@@ -3,12 +3,13 @@
     <string name="home">Home</string>
     <string name="language">Language</string>
     <string name="cart">Cart</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="hi_shashi">Hi Shashi</string>
+    <string name="hi_one_banc">Hi OneBanc</string>
     <string name="order_eat">Order &amp; Eat</string>
     <string name="find_your_food">Find your food</string>
     <string name="category">Category</string>
-    <string name="top_3_foods">Top 3 Picks</string>
+    <string name="top_3_foods">Top Picks For You</string>
     <string name="title">Title</string>
+    <string name="dummy_rating">0</string>
+    <string name="dummy_price">999</string>
+    <string name="food_name">Food Name</string>
 </resources>
