@@ -19,7 +19,7 @@ class DialogLanguageFragment : DialogFragment() {
             .setNegativeButton("Close") { _, _ -> }
             .setPositiveButton("Change") { _, _ -> }
 
-        val dialog:Dialog = builder.create();
+        val dialog:Dialog = builder.create()
 
         return dialog
     }

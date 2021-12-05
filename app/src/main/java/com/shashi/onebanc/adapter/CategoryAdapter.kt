@@ -1,5 +1,6 @@
 package com.shashi.onebanc.adapter
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,15 +12,14 @@ import coil.load
 import com.shashi.onebanc.R
 import com.shashi.onebanc.interfaces.CategoryClickListener
 import com.shashi.onebanc.model.Cuisine
-import java.util.zip.Inflater
 
-class CategoryAdapter(categoryClickListener: CategoryClickListener) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
+class CategoryAdapter(private val categoryClickListener: CategoryClickListener) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
     private val TAG = "CategoryAdapter"
 
     private var cuisineCategoryList : Cuisine = Cuisine()
-    private val categoryClickListener : CategoryClickListener = categoryClickListener
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setCuisineList(cuisine: Cuisine) {
         cuisineCategoryList = cuisine
         notifyDataSetChanged()

@@ -1,10 +1,9 @@
 package com.shashi.onebanc
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.shashi.onebanc.fragment.CartFragment
 import com.shashi.onebanc.fragment.DialogLanguageFragment
 import com.shashi.onebanc.fragment.HomeFragment

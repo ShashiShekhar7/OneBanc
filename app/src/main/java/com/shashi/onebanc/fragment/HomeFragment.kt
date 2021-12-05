@@ -8,16 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.core.view.get
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.CompositePageTransformer
-import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
 import com.shashi.onebanc.R
@@ -30,8 +24,6 @@ import com.shashi.onebanc.network.RetrofitHelper
 import com.shashi.onebanc.repository.CuisineRepository
 import com.shashi.onebanc.viewmodel.HomeViewModel
 import com.shashi.onebanc.viewmodel.HomeViewModelFactory
-import java.lang.Math.abs
-import java.lang.Math.log
 
 class HomeFragment : Fragment(), CategoryClickListener {
 
