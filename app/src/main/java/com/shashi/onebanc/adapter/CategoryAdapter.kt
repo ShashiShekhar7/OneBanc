@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.shashi.onebanc.R
-import com.shashi.onebanc.interfaces.CategoryClickListener
+import com.shashi.onebanc.listener.CategoryClickListener
 import com.shashi.onebanc.model.Cuisine
 
 class CategoryAdapter(private val categoryClickListener: CategoryClickListener) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {

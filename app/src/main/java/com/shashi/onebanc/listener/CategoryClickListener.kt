@@ -1,4 +1,4 @@
-package com.shashi.onebanc.interfaces
+package com.shashi.onebanc.listener
 
 import com.shashi.onebanc.model.CuisineItem
 

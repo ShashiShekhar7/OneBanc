@@ -16,12 +16,13 @@ import androidx.viewpager2.widget.ViewPager2
 import coil.load
 import com.shashi.onebanc.R
 import com.shashi.onebanc.adapter.CategoryAdapter
-import com.shashi.onebanc.interfaces.CategoryClickListener
+import com.shashi.onebanc.listener.CategoryClickListener
 import com.shashi.onebanc.model.CuisineItem
 import com.shashi.onebanc.model.Item
 import com.shashi.onebanc.network.CuisineApiService
 import com.shashi.onebanc.network.RetrofitHelper
 import com.shashi.onebanc.repository.CuisineRepository
+import com.shashi.onebanc.util.AddRemoveItem
 import com.shashi.onebanc.viewmodel.HomeViewModel
 import com.shashi.onebanc.viewmodel.HomeViewModelFactory
 
@@ -51,6 +52,7 @@ class HomeFragment : Fragment(), CategoryClickListener {
 
         val cuisineApiService = RetrofitHelper.getInstance().create(CuisineApiService::class.java)
         val repository = CuisineRepository(cuisineApiService)
+
 
         viewModel = ViewModelProvider(this, HomeViewModelFactory(repository))[HomeViewModel::class.java]
 
@@ -95,6 +97,9 @@ class HomeFragment : Fragment(), CategoryClickListener {
 
                 setTopItem(top3Item[2], imageTop1, foodNameTop3, ratingTop3, priceTop3)
             }
+
+            addRemoveItem(view)
+
         })
 
         viewModel.cuisinesLoadError.observe(viewLifecycleOwner, {
@@ -123,6 +128,44 @@ class HomeFragment : Fragment(), CategoryClickListener {
             clipToPadding = false
             offscreenPageLimit = 3
         }
+    }
+
+    private fun addRemoveItem(view: View) {
+        val removeTop1 : ImageView = view.findViewById(R.id.iv_top_1_remove)
+        val removeTop2 : ImageView = view.findViewById(R.id.iv_top_2_remove)
+        val removeTop3 : ImageView = view.findViewById(R.id.iv_top_3_remove)
+
+        val addTop1 : ImageView = view.findViewById(R.id.iv_top_1_add)
+        val addTop2 : ImageView = view.findViewById(R.id.iv_top_2_add)
+        val addTop3 : ImageView = view.findViewById(R.id.iv_top_3_add)
+
+        val qtyTop1 : TextView = view.findViewById(R.id.tv_top1_qty)
+        val qtyTop2 : TextView = view.findViewById(R.id.tv_top2_qty)
+        val qtyTop3 : TextView = view.findViewById(R.id.tv_top3_qty)
+
+        val addRemoveItem = AddRemoveItem()
+
+        removeTop1.setOnClickListener {
+            addRemoveItem.removeItem(qtyTop1)
+        }
+        removeTop2.setOnClickListener {
+            addRemoveItem.removeItem(qtyTop2)
+        }
+        removeTop3.setOnClickListener {
+            addRemoveItem.removeItem(qtyTop3)
+        }
+
+        addTop1.setOnClickListener {
+            addRemoveItem.addItem(qtyTop1)
+        }
+        addTop2.setOnClickListener {
+            addRemoveItem.addItem(qtyTop2)
+        }
+        addTop3.setOnClickListener {
+            addRemoveItem.addItem(qtyTop3)
+        }
+
+
     }
 
     override fun onCategoryClick(cuisineItem: CuisineItem) {
